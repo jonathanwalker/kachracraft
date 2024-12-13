@@ -39,6 +39,12 @@ To run KachraCraft, ensure you have the following:
 - An **AWS account** with Bedrock access
 - **AWS SSO** configured with necessary permissions
 
+## ⚠️ Warning: Potential Security Issues
+
+KachraCraft contains **security vulnerabilities**. Exercise caution when deploying it or exposing it to untrusted users. Review and implement appropriate security measures to safeguard your deployment.
+
+For insights on the security of this tool, check out this blog: [Hacking AI Applications](https://www.securityrunners.io/post/hacking-ai-applications).
+
 ## Quick Start with Docker
 
 Simplify your setup with Docker:
