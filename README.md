@@ -13,6 +13,9 @@ KachraCraft is an innovative web application that harnesses the power of AI to g
 - ⚡ **3D Print Optimization**: Automated checks to ensure print readiness.
 - 💾 **Direct STL Downloads**: Save your models effortlessly.
 
+![KachraCraft Screenshot](.assets/screenshot.png)
+*Screenshot of the application generating basic shapes like a hand screw head.*
+
 ## Tech Stack
 
 ### Frontend
