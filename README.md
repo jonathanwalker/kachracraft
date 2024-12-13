@@ -1,103 +1,94 @@
-# KachraCraft - AI-Powered 3D Model Generator
+# KachraCraft 🗑️ - AI-Powered 3D Model Generator
 
-KachraCraft is a web application that generates 3D models suitable for 3D printing using AI. It combines a Vue.js frontend for visualization and interaction with a Flask backend that leverages AWS Bedrock and OpenSCAD for model generation.
+KachraCraft is an innovative web application that harnesses the power of AI to generate 3D models, ready for 3D printing. Featuring a Vue.js frontend for user interaction and visualization, alongside a Flask backend that integrates AWS Bedrock and OpenSCAD, KachraCraft delivers a seamless 3D modeling experience.
 
-![KachraCraft Interface](preview.png)
+---
 
 ## Features
 
-- 🤖 AI-powered 3D model generation using AWS Bedrock
-- 🎨 Real-time 3D model preview with Three.js
-- 💬 Interactive chat interface for model generation
-- 🔄 Model regeneration and history navigation
-- ⚡ Optimized for 3D printing with automated checks
-- 📥 Direct STL file downloads
+- 🤖 **AI-Powered 3D Modeling**: Uses AWS Bedrock for intelligent model generation.
+- 🎨 **Real-Time 3D Visualization**: Interactive previews powered by Three.js.
+- 💬 **Chat-Based Interface**: Generate models through conversational commands.
+- 🔄 **Regeneration & History**: Navigate and refine your model generation history.
+- ⚡ **3D Print Optimization**: Automated checks to ensure print readiness.
+- 💾 **Direct STL Downloads**: Save your models effortlessly.
 
 ## Tech Stack
 
 ### Frontend
-- Vue.js 3 with Composition API
-- Three.js for 3D visualization
-- Axios for API communication
+- **Vue.js 3** with Composition API for a modern UI.
+- **Three.js** for immersive 3D visualization.
+- **Axios** for seamless API communication.
 
 ### Backend
-- Flask with Python 3.9
-- AWS Bedrock for AI model generation
-- SolidPython for 3D modeling
-- OpenSCAD for STL conversion
+- **Flask** with Python 3.9 for robust API services.
+- **AWS Bedrock** for AI-driven model generation.
+- **SolidPython** for dynamic 3D modeling.
+- **OpenSCAD** for STL conversion and validation.
 
 ## Prerequisites
 
-- Python 3.9+
-- Node.js 18+
-- OpenSCAD
-- AWS account with Bedrock access
-- AWS SSO configured with appropriate permissions
+To run KachraCraft, ensure you have the following:
 
-## Installation
+- **Python** 3.9+
+- **Node.js** 18+
+- **OpenSCAD** installed
+- An **AWS account** with Bedrock access
+- **AWS SSO** configured with necessary permissions
 
-1. Clone the repository:
+## Quick Start with Docker
+
+Simplify your setup with Docker:
+
+1. Build and run the container:
+   ```bash
+   docker build -t kachracraft .
+   docker run -p 5000:5000 \
+     -v ~/.aws:/root/.aws:ro \
+     -e AWS_PROFILE=your-profile-name \
+     kachracraft
+   ```
+
+2. Open your browser and visit `http://localhost:5000`.
+
+## Development Setup
+
+Follow these steps to run the project locally:
+
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/yourusername/kachracraft.git
 cd kachracraft
 ```
 
-2. Set up the backend:
+### 2. Backend Setup
 ```bash
 cd backend
 pip install -r requirements.txt
 ```
 
-3. Set up the frontend:
+### 3. Frontend Setup
 ```bash
 cd frontend
 npm install
 ```
 
-## Configuration
+### 4. Run Locally
 
-1. Ensure AWS SSO is configured with your profile:
-```bash
-aws sso login --profile your-profile-name
-```
-
-2. Set up environment variables (optional):
-```bash
-export AWS_PROFILE=your-profile-name
-export AWS_DEFAULT_REGION=us-west-2
-```
-
-## Running Locally
-
-### Development Mode
-
-1. Start the backend server:
+#### Start the Backend Server
 ```bash
 cd backend
 python app.py
 ```
 
-2. Start the frontend development server:
+#### Start the Frontend Development Server
 ```bash
 cd frontend
 npm run dev
 ```
 
-3. Visit `http://localhost:5173` in your browser
-
-### Production Mode
-
-Build and run using Docker:
-
-```bash
-docker build -t kachracraft .
-docker run -p 5000:5000 \
-  -v ~/.aws:/root/.aws:ro \
-  -e AWS_PROFILE=your-profile-name \
-  kachracraft
-```
-
-Visit `http://localhost:5000` in your browser.
+#### Access the App
+Visit `http://localhost:5173` in your browser.
 
 ## Project Structure
 
@@ -118,26 +109,35 @@ kachracraft/
 
 ## Model Generation Constraints
 
-- Maximum dimensions: 270mm x 200mm x 200mm
-- All parts must be connected (no floating components)
-- At least one flat surface for bed adhesion
-- Proper use of segments for curved surfaces (50 segments)
-- Automatic STL file generation and cleanup
+To ensure 3D print compatibility, the following constraints apply:
+
+- **Maximum Dimensions**: 270mm x 200mm x 200mm.
+- **Connectivity**: All parts must be connected (no floating components).
+- **Flat Surface**: At least one flat surface for bed adhesion.
+- **Segment Resolution**: Minimum of 50 segments for curved surfaces.
+- **STL Handling**: Automatic generation and cleanup of STL files.
 
 ## Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+We welcome contributions! Here's how to get started:
 
-## License
-
-[MIT License](LICENSE)
+1. Fork the repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your feature description"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a Pull Request.
 
 ## Acknowledgments
 
-- Thanks to Anthropic's Claude for AI assistance
-- Three.js community for 3D visualization components
-- OpenSCAD for STL generation capabilities
+- **Anthropic's Claude**: For AI-driven insights and guidance.
+- **Three.js Community**: For exceptional 3D visualization tools.
+- **OpenSCAD**: For robust STL generation capabilities.
