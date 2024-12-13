@@ -1,0 +1,5 @@
+model.stl
+model.scad
+backend/**/*.stl
+backend/temp_files/*
+.DS_Store

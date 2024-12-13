@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <!-- <link rel="icon" href="/favicon.ico"> -->
+    <canvas style="display: none;" id="favicon" width="64" height="64"></canvas>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KachraCraft</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+<script>
+  // Draw emoji to canvas and set as favicon
+  const canvas = document.getElementById('favicon');
+  const ctx = canvas.getContext('2d');
+  ctx.font = '50px serif';
+  ctx.fillText('🗑️', 7, 50);
+  
+  // Convert to favicon
+  const link = document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = canvas.toDataURL();
+  document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+  

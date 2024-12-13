@@ -1,0 +1,40 @@
+/* base.css */
+
+/* Dark Theme Colors */
+:root {
+  --color-background: #121212; /* Dark background */
+  --color-background-soft: #1e1e1e;
+  --color-background-mute: #2a2a2a;
+
+  --color-border: #333333;
+  --color-border-hover: #444444;
+
+  --color-heading: #ffffff;
+  --color-text: #e0e0e0;
+
+  --color-primary: #1e88e5; /* Accent color */
+  --color-secondary: #424242; /* Secondary elements */
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
