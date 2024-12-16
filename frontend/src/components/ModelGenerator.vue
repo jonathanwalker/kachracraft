@@ -98,7 +98,7 @@ export default {
 
             stlFile: null,
             isLoading: false,
-            defaultModelUrl: "https://static-assets.securityrunners.io/kachra.stl",
+            defaultModelUrl: "/kachra.stl",
             modelHistory: [],
             currentModelIndex: -1,
             lastPrompt: "",
